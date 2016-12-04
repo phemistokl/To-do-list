@@ -1,0 +1,29 @@
+.root {
+    padding: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.check {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 20px;
+    background-image: url(/images/check.png);
+}
+
+.completed {
+    composes: check;
+
+    background-position: -51px 0;
+}
+
+.delete {
+    float: right;
+    color: #cacaca;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 5px;
+}
