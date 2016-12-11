@@ -1,3 +1,9 @@
+export const getAllTodos = text => {
+    return {
+        type: 'GET_ALL_TODOS'
+    };
+};
+
 export const addTodo = text => {
     return {
         type: 'ADD_TODO',

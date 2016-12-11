@@ -18,31 +18,34 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: ['react-hot', 'babel']
-            },
-            {
-                test: /\.less$/,
-                exclude: /node_modules/,
-                use: [
-                    'style',
-                    'css?modules&importLoaders=1&localIdentName=__[name]__[local]___[hash:base64:5]',
-                    {
-                        loader: 'postcss',
-                        options: {
-                            plugins() {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
-                    },
-                    'less'
-                ]
+                use: ['react-hot-loader', 'babel-loader']
             },
             {
                 test: /\.css$/,
-                use: ['style', 'css']
-            }
+                loader: 'style-loader!css-loader',
+              },
+              {
+                test: /\.less$/,
+                use: [
+                  {
+                    loader: 'style-loader',
+                  },
+                  {
+                    loader: 'css-loader',
+                    options: {
+                      importLoaders: 1,
+                      modules: true,
+                      localIdentName: '[name]__[hash:base64:5]',
+                    },
+                  },
+                  {
+                    loader: 'postcss-loader',
+                  },
+                  {
+                    loader: 'less-loader',
+                  },
+                ],
+              },
         ]
     },
     plugins: [

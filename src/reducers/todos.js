@@ -31,6 +31,12 @@ function todo(state, action) {
 
 export default function todos(state = [], action) {
     switch (action.type) {
+        case 'GET_ALL_TODOS': {
+            return [
+                ...state
+            ];
+        }
+
         case 'ADD_TODO': {
             return [
                 ...state,
