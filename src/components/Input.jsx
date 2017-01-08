@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-import { addTodo } from '../actions';
-
-import styles from './AddTodo.less';
+import styles from './Input.less';
 
 const ENTER_KEY = 13;
 
-@connect(undefined, { addTodo })
 export default class AddTodo extends Component {
     constructor() {
         super();
@@ -28,7 +24,7 @@ export default class AddTodo extends Component {
 
     handleKeyDown(e) {
         if (e.keyCode === ENTER_KEY) {
-            this.props.addTodo(this.state.text);
+            this.props.onEnter(this.state.text);
             this.setState({ text: "" });
         }
     }
@@ -39,7 +35,7 @@ export default class AddTodo extends Component {
                 <input
                     className={styles.input}
                     type="text"
-                    placeholder="What needs to be done?"
+                    placeholder={this.props.placeholder}
                     value={this.state.text}
                     onChange={this.handleTextChange}
                     onKeyDown={this.handleKeyDown}

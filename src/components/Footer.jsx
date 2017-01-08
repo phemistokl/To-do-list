@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import FilterLink from './FilterLink.jsx';
+import FilterLink from '../containers/FilterLink.jsx';
 
 import styles from './Footer.less';
 
