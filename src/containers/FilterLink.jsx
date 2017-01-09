@@ -1,15 +1,13 @@
 import { connect } from 'react-redux';
 
 import { setFilter } from '../actions';
-import { getFilter } from '../selectors';
+import { isFilterActive } from '../selectors';
 
 import Link from '../components/Link.jsx';
 
 function mapStateToProps(state, ownProps) {
-    const filter = getFilter(state);
-
     return {
-        active: ownProps.filter === filter
+        active: isFilterActive(state, ownProps.filter)
     };
 }
 

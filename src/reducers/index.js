@@ -1,7 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 
 import todos from './todos';
 import filter from './filter';
+import counter from './counter';
+import undoable from './undoable';
 
 // const combineReducers = reducers => {
 //     return (state = {}, action) =>
@@ -18,4 +20,8 @@ import filter from './filter';
 //         );
 // };
 
-export default combineReducers({ todos, filter });
+export default combineReducers({
+  todos: undoable(todos), 
+  filter,
+  counter
+});

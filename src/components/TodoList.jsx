@@ -9,12 +9,12 @@ export default class TodoList extends Component {
                 {
                     this.props.todos.map(todo =>
                         <Todo
-                            key={todo.id}
-                            id={todo.id}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onToggle={() => this.props.onToggleTodo(todo.id)}
-                            onDelete={() => this.props.onDeleteTodo(todo.id)}
+                            key={todo.get('id')}
+                            id={todo.get('id')}
+                            text={todo.get('text')}
+                            completed={todo.get('completed')}
+                            onToggle={() => this.props.onToggleTodo(todo.get('id'))}
+                            onDelete={() => this.props.onDeleteTodo(todo.get('id'))}
                         />
                     )
                 }

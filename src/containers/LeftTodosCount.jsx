@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getTodosLeftCount } from '../selectors';
+import { getLeftTodosCount } from '../selectors';
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
     return {
-        count: getTodosLeftCount(state)
+        count: getLeftTodosCount(state)
     };
 }
 

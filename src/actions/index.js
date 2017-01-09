@@ -32,3 +32,27 @@ export const setFilter = filter => {
         filter
     };
 };
+
+export const undo = () => {
+    return {
+        type: 'UNDO'
+    };
+};
+
+export const redo = () => {
+    return {
+        type: 'REDO'
+    };
+};
+
+export const counterIncrement = () => {
+    return {
+        type: 'COUNTER_INCREMENT'
+    };
+};
+
+export const counterDecrement = () => {
+    return {
+        type: 'COUNTER_DECREMENT'
+    };
+};

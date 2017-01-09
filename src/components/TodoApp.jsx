@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TodoList from '../containers/VisibleTodoList.jsx';
 import AddTodo from '../containers/AddTodo.jsx';
+import Counter from '../containers/Counter.jsx';
 import Footer from './Footer.jsx';
 
 import styles from './TodoApp.less';
@@ -17,6 +18,10 @@ export default class TodoApp extends Component {
                         <AddTodo />
                         <TodoList />
                         <Footer />
+                    </div>
+
+                    <div className={styles.counter}>
+                        <Counter />
                     </div>
                 </div>
             </div>
